@@ -6,10 +6,10 @@ class StockMarketOracle(gl.Contract):
     GenLayer Sentinel: Stock Market Oracle
     Brings traditional finance (TradFi) stock prices on-chain.
     """
-    stock_prices: dict[str, u256]
+    stock_prices: TreeMap[str, u256]
 
     def __init__(self):
-        self.stock_prices = {}
+        self.stock_prices = TreeMap()
 
     @gl.public.write
     def update_stock_price(self, symbol: str) -> str:

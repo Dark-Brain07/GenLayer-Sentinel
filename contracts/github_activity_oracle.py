@@ -6,10 +6,10 @@ class GitHubActivityOracle(gl.Contract):
     GenLayer Sentinel: GitHub Activity Oracle
     Tracks open-source developer activity to distribute grants automatically.
     """
-    dev_activity_score: dict[str, u256]
+    dev_activity_score: TreeMap[str, u256]
 
     def __init__(self):
-        self.dev_activity_score = {}
+        self.dev_activity_score = TreeMap()
 
     @gl.public.write
     def check_activity(self, github_handle: str) -> str:

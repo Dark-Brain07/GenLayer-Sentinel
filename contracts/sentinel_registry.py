@@ -6,10 +6,10 @@ class SentinelRegistry(gl.Contract):
     GenLayer Sentinel: Sentinel Registry
     The Master contract that indexes all active oracles and middleware services in the suite.
     """
-    registered_services: dict[str, str] # Service Name -> Contract Address
+    registered_services: TreeMap[str, str] # Service Name -> Contract Address
 
     def __init__(self):
-        self.registered_services = {}
+        self.registered_services = TreeMap()
 
     @gl.public.write
     def register_service(self, service_name: str, contract_address: str) -> str:

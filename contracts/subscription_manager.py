@@ -6,10 +6,10 @@ class SubscriptionManager(gl.Contract):
     GenLayer Sentinel: Subscription Manager
     Allows DApps to subscribe to oracle feeds.
     """
-    active_subscriptions: dict[str, u256] # DApp address -> Expiration block/time
+    active_subscriptions: TreeMap[str, u256] # DApp address -> Expiration block/time
 
     def __init__(self):
-        self.active_subscriptions = {}
+        self.active_subscriptions = TreeMap()
 
     @gl.public.write
     def subscribe(self, dapp_address: str, duration: u256) -> str:

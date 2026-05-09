@@ -7,12 +7,12 @@ class HistoricalArchive(gl.Contract):
     Stores snapshots of oracle data for back-testing and historical audits.
     """
     # Asset -> Snapshot ID -> Data
-    archive_data: dict[str, dict[u256, str]]
-    snapshot_counters: dict[str, u256]
+    archive_data: TreeMap[str, TreeMap[u256, str]]
+    snapshot_counters: TreeMap[str, u256]
 
     def __init__(self):
-        self.archive_data = {}
-        self.snapshot_counters = {}
+        self.archive_data = TreeMap()
+        self.snapshot_counters = TreeMap()
 
     @gl.public.write
     def save_snapshot(self, asset: str, data: str) -> str:
@@ -20,7 +20,7 @@ class HistoricalArchive(gl.Contract):
         Saves a historical snapshot.
         """
         if asset not in self.archive_data:
-            self.archive_data[asset] = {}
+            self.archive_data[asset] = TreeMap()
             self.snapshot_counters[asset] = u256(0)
             
         counter = self.snapshot_counters[asset]

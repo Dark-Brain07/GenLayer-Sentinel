@@ -6,10 +6,10 @@ class OracleReputation(gl.Contract):
     GenLayer Sentinel: Oracle Reputation System
     Tracks which validators/nodes provide the most accurate or timely data.
     """
-    node_scores: dict[str, u256]
+    node_scores: TreeMap[str, u256]
 
     def __init__(self):
-        self.node_scores = {}
+        self.node_scores = TreeMap()
 
     @gl.public.write
     def report_accuracy(self, node_address: str, accurate: bool) -> str:

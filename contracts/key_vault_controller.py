@@ -7,10 +7,10 @@ class KeyVaultController(gl.Contract):
     Maintains simulated encrypted references to private API keys.
     Prevents raw keys from being exposed in plaintext on the ledger.
     """
-    stored_keys: dict[str, str]
+    stored_keys: TreeMap[str, str]
 
     def __init__(self):
-        self.stored_keys = {}
+        self.stored_keys = TreeMap()
 
     @gl.public.write
     def store_key_reference(self, service_name: str, encrypted_reference: str) -> str:

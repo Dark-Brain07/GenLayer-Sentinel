@@ -7,11 +7,11 @@ class RateLimiter(gl.Contract):
     Tracks and limits the number of requests a DApp can make 
     to prevent spamming expensive off-chain APIs.
     """
-    request_counts: dict[str, u256]
+    request_counts: TreeMap[str, u256]
     max_requests: u256
 
     def __init__(self):
-        self.request_counts = {}
+        self.request_counts = TreeMap()
         self.max_requests = u256(100) # Default limit
 
     @gl.public.write

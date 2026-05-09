@@ -6,10 +6,10 @@ class CryptoPriceFeed(gl.Contract):
     GenLayer Sentinel: Crypto Price Feed
     Provides aggregated crypto asset prices for DeFi applications.
     """
-    asset_prices: dict[str, u256]
+    asset_prices: TreeMap[str, u256]
 
     def __init__(self):
-        self.asset_prices = {}
+        self.asset_prices = TreeMap()
 
     @gl.public.write
     def update_price(self, ticker: str) -> str:

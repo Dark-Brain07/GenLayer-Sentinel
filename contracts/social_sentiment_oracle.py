@@ -6,10 +6,10 @@ class SocialSentimentOracle(gl.Contract):
     GenLayer Sentinel: Social Sentiment Oracle
     Analyzes Twitter/X sentiment for crypto assets to drive automated trading logic.
     """
-    asset_sentiment: dict[str, str]
+    asset_sentiment: TreeMap[str, str]
 
     def __init__(self):
-        self.asset_sentiment = {}
+        self.asset_sentiment = TreeMap()
 
     @gl.public.write
     def analyze_sentiment(self, asset: str) -> str:

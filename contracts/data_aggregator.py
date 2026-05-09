@@ -6,10 +6,10 @@ class DataAggregator(gl.Contract):
     GenLayer Sentinel: Data Aggregator
     Combines data points from multiple oracle sources into a cohesive summary.
     """
-    aggregated_summaries: dict[str, str]
+    aggregated_summaries: TreeMap[str, str]
 
     def __init__(self):
-        self.aggregated_summaries = {}
+        self.aggregated_summaries = TreeMap()
 
     @gl.public.write
     def aggregate_market_data(self, ticker: str, crypto_price: str, stock_price: str, sentiment: str) -> str:

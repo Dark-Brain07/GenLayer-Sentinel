@@ -7,10 +7,10 @@ class MultiSigAuthenticator(gl.Contract):
     Requires multiple approvals or strong AI-verified justification 
     for high-risk oracle data modifications.
     """
-    pending_transactions: dict[str, u256]
+    pending_transactions: TreeMap[str, u256]
 
     def __init__(self):
-        self.pending_transactions = {}
+        self.pending_transactions = TreeMap()
 
     @gl.public.write
     def submit_transaction(self, tx_id: str, justification: str) -> str:

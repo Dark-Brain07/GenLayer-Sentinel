@@ -6,10 +6,10 @@ class AccessControlList(gl.Contract):
     GenLayer Sentinel: Access Control List (ACL)
     Manages role-based permissions for interacting with Oracles.
     """
-    user_roles: dict[str, str]
+    user_roles: TreeMap[str, str]
 
     def __init__(self):
-        self.user_roles = {}
+        self.user_roles = TreeMap()
         # Initial setup: deploying address could be an admin, but we keep it simple here.
 
     @gl.public.write

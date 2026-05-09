@@ -8,11 +8,11 @@ class ApiGatewayProxy(gl.Contract):
     It routes requests while concealing the destination details.
     """
     total_requests_routed: u256
-    authorized_dapps: dict[str, bool]
+    authorized_dapps: TreeMap[str, bool]
 
     def __init__(self):
         self.total_requests_routed = u256(0)
-        self.authorized_dapps = {}
+        self.authorized_dapps = TreeMap()
 
     @gl.public.write
     def register_dapp(self, dapp_address: str) -> str:
