@@ -29,35 +29,35 @@ Authored comprehensive technical documentation for deploying a 15-contract Oracl
 **Title:** AI-Evaluated Access Control List (ACL)
 **Description:**
 A role-based permission system that leverages GenVM's native AI. Rather than basic true/false checks, the AI evaluates the user's role against a natural language description of the attempted action, finalizing permission based on validator consensus.
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0x6F5a99BDfFCeFC698B0760CD9F609fCAA8656a2c`
 - **Source Code:** [access_control_list.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/access_control_list.py)
 
 #### 2. API Gateway Proxy
 **Title:** Intelligent API Gateway Proxy Middleware
 **Description:**
 An infrastructure contract that routes DApp requests to off-chain APIs. It uses GenVM AI to dynamically analyze request payloads and determine the correct routing path, secured by Equivalence Principles to ensure routing consistency across the network.
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0xD0A20a259aabe2E6d70121A91687429247fc05F1`
 - **Source Code:** [api_gateway_proxy.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/api_gateway_proxy.py)
 
 #### 3. Crypto Price Feed
 **Title:** Multi-Asset Crypto Price Oracle Feed
 **Description:**
 Developed an Intelligent Contract acting as a decentralized price feed for DeFi. It uses GenVM LLM calls to fetch live USD prices for crypto assets. The `gl.eq_principle.prompt_comparative` guard ensures validators extract and agree upon the exact same integer price value, preventing consensus forks on subjective responses.
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0xBFe8f746094039f9D8E3113Dceb7A0E24f2c474b`
 - **Source Code:** [crypto_price_feed.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/crypto_price_feed.py)
 
 #### 4. Data Aggregator
 **Title:** Intelligent Multi-Oracle Data Aggregator
 **Description:**
 A utility contract that aggregates data from multiple oracle feeds (Crypto, Stocks, Sentiment). It utilizes GenVM AI to write cohesive market summaries based on the raw data inputs, using `gl.eq_principle` to ensure all validators agree on the fundamental meaning of the summary.
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0xED2f57B0a78097C7D1c96C25AD6f943b149FAaFD`
 - **Source Code:** [data_aggregator.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/data_aggregator.py)
 
 #### 5. GitHub Activity Oracle
 **Title:** Developer Activity Oracle for Grant Distribution
 **Description:**
 Deployed an Oracle that tracks open-source developer activity by evaluating GitHub handles. It uses GenVM LLMs to score recent commits and PRs. Consensus is maintained via `gl.eq_principle`, ensuring a fair, decentralized evaluation of developer contributions.
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0x058e746BE1FDA8866e9824Fa0775db45ACF07174`
 - **Source Code:** [github_activity_oracle.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/github_activity_oracle.py)
 
 #### 6. Historical Archive
