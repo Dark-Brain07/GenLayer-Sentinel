@@ -85,17 +85,38 @@ function App() {
     nodes: '12 Active'
   });
 
-  const handleRefresh = () => {
+  const fetchLiveData = async () => {
     setIsRefreshing(true);
-    // Simulate fetching new consensus data from GenLayer
-    setTimeout(() => {
+    try {
+      // Fetch live BTC price from Binance
+      const btcRes = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
+      const btcData = await btcRes.json();
+      const btcPrice = parseFloat(btcData.price).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+      // Fetch live Weather from Open-Meteo (London, UK)
+      const weatherRes = await fetch('https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.12&current_weather=true');
+      const weatherData = await weatherRes.json();
+      const temp = weatherData.current_weather.temperature;
+      
       setData(prev => ({
         ...prev,
-        btc: '$' + (64000 + Math.floor(Math.random() * 1000)).toLocaleString(),
-        requests: (parseInt(prev.requests.replace(',', '')) + Math.floor(Math.random() * 5)).toLocaleString()
+        weather: `${temp}°C, Active`,
+        btc: btcPrice,
+        requests: (parseInt(prev.requests.replace(/,/g, '')) + Math.floor(Math.random() * 5)).toLocaleString()
       }));
+    } catch (err) {
+      console.error("Failed to fetch live data", err);
+    } finally {
       setIsRefreshing(false);
-    }, 2000);
+    }
+  };
+
+  useEffect(() => {
+    fetchLiveData();
+  }, []);
+
+  const handleRefresh = () => {
+    fetchLiveData();
   };
 
   return (
