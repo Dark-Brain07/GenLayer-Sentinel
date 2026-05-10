@@ -6,33 +6,31 @@ class HistoricalArchive(gl.Contract):
     GenLayer Sentinel: Historical Archive
     Stores snapshots of oracle data for back-testing and historical audits.
     """
-    # Key is f"{asset}_{snapshot_id}" -> Data
     archive_data: TreeMap[str, str]
-    snapshot_counters: TreeMap[str, u256]
+    total_snapshots: u256
 
     def __init__(self):
         self.archive_data = TreeMap()
-        self.snapshot_counters = TreeMap()
+        self.total_snapshots = u256(0)
 
     @gl.public.write
     def save_snapshot(self, asset: str, data: str) -> str:
         """
-        Saves a historical snapshot.
+        Saves a historical snapshot using a sequential ID.
         """
-        if asset not in self.snapshot_counters:
-            self.snapshot_counters[asset] = u256(0)
-            
-        counter = self.snapshot_counters[asset]
-        key = f"{asset}_{counter}"
-        
+        snapshot_id = self.total_snapshots
+        key = asset + "_" + str(snapshot_id)
+
         self.archive_data[key] = data
-        self.snapshot_counters[asset] = counter + u256(1)
-        
-        return f"Snapshot saved for {asset}. ID: {counter}"
+        self.total_snapshots = snapshot_id + u256(1)
+
+        return "Snapshot saved for " + asset + " with ID " + str(snapshot_id)
 
     @gl.public.view
     def get_snapshot(self, asset: str, snapshot_id: u256) -> str:
-        key = f"{asset}_{snapshot_id}"
-        if key in self.archive_data:
-            return self.archive_data[key]
-        return "Snapshot not found."
+        key = asset + "_" + str(snapshot_id)
+        return self.archive_data.get(key, "Snapshot not found.")
+
+    @gl.public.view
+    def get_total_snapshots(self) -> u256:
+        return self.total_snapshots
