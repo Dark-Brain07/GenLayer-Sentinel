@@ -86,7 +86,8 @@ Deployed an Oracle that tracks open-source developer activity by evaluating GitH
 **Description:**
 A storage-focused contract designed to take snapshots of Oracle data over time. This allows DeFi applications and analysts to back-test strategies against verified historical states that were previously achieved via GenLayer consensus.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0xb384c4FB33C73cbCC54D605D5842c2a555603a17`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0xb384c4FB33C73cbCC54D605D5842c2a555603a17)
 - **Source Code:** [historical_archive.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/historical_archive.py)
 
 #### 7. Key Vault Controller
@@ -95,7 +96,8 @@ A storage-focused contract designed to take snapshots of Oracle data over time. 
 **Description:**
 This contract manages encrypted references to private API keys. It utilizes GenLayer's AI natively to validate if incoming access tokens match expected patterns for stored references, allowing for secure, on-chain credential validation without exposing raw keys.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0x6De4913039c09F85F623f27F512621fd8A041754`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0x6De4913039c09F85F623f27F512621fd8A041754)
 - **Source Code:** [key_vault_controller.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/key_vault_controller.py)
 
 #### 8. Multi-Sig Authenticator
@@ -104,7 +106,8 @@ This contract manages encrypted references to private API keys. It utilizes GenL
 **Description:**
 A security middleware contract that requires AI auditing for high-risk transactions. It uses GenVM to perform a risk assessment on the transaction's justification. The result (Low/High risk) is achieved via the Equivalence Principle, determining if the multi-sig should proceed.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0xfc59EF0c51579381A704e6101cA3F20cA0DDB177`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0xfc59EF0c51579381A704e6101cA3F20cA0DDB177)
 - **Source Code:** [multi_sig_authenticator.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/multi_sig_authenticator.py)
 
 #### 9. Oracle Reputation
@@ -113,7 +116,8 @@ A security middleware contract that requires AI auditing for high-risk transacti
 **Description:**
 A mechanism to track the reliability of data providers. It adjusts reputation scores based on the accuracy of reported data. This contract is crucial for maintaining the long-term integrity of the decentralized Sentinel oracle network.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0x4Cc062335f15d3E5b74adABD1f1FE8D6Fca7491C`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0x4Cc062335f15d3E5b74adABD1f1FE8D6Fca7491C)
 - **Source Code:** [oracle_reputation.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/oracle_reputation.py)
 
 #### 10. Rate Limiter
@@ -122,7 +126,8 @@ A mechanism to track the reliability of data providers. It adjusts reputation sc
 **Description:**
 A contract that protects external APIs from spam. Instead of hardcoded limits, it uses `gl.eq_principle` guided AI to evaluate user justifications for rate-limit increases, granting them dynamically based on the business validity of the request.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0xA5748189acdd3F3EB514834F96bC16553d1A8996`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0xA5748189acdd3F3EB514834F96bC16553d1A8996)
 - **Source Code:** [rate_limiter.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/rate_limiter.py)
 
 #### 11. Sentinel Registry
@@ -131,7 +136,8 @@ A contract that protects external APIs from spam. Instead of hardcoded limits, i
 **Description:**
 The core index contract for the Sentinel suite. It maintains a registry of all active Oracle and Middleware addresses. Furthermore, it uses GenVM AI to periodically evaluate and summarize the overall health and capabilities of the active network via `gl.eq_principle`.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0xacE787a060d9e70b06B9C4014D86B31Ea14a9939`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0xacE787a060d9e70b06B9C4014D86B31Ea14a9939)
 - **Source Code:** [sentinel_registry.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/sentinel_registry.py)
 
 #### 12. Social Sentiment Oracle
@@ -140,7 +146,8 @@ The core index contract for the Sentinel suite. It maintains a registry of all a
 **Description:**
 An Intelligent Contract that performs on-chain sentiment analysis (Bullish/Bearish/Neutral) of Twitter/X data for specific assets. It leverages the AI capabilities of GenVM while utilizing the Equivalence Principle to force validator consensus on the subjective categorization.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0xA245D3Fc9f15F3aacC2f60b32a80DD852CC7B422`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0xA245D3Fc9f15F3aacC2f60b32a80DD852CC7B422)
 - **Source Code:** [social_sentiment_oracle.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/social_sentiment_oracle.py)
 
 #### 13. Stock Market Oracle
@@ -149,7 +156,8 @@ An Intelligent Contract that performs on-chain sentiment analysis (Bullish/Beari
 **Description:**
 Brings traditional finance (TradFi) data on-chain. This contract fetches stock closing prices (e.g., AAPL) using GenVM LLM integration. By strictly enforcing JSON formatting within `gl.eq_principle`, the contract ensures deterministic state updates from non-deterministic real-world financial data.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0x33F530681e7B0A1405b67126e6e9f1c85C46C280`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0x33F530681e7B0A1405b67126e6e9f1c85C46C280)
 - **Source Code:** [stock_market_oracle.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/stock_market_oracle.py)
 
 #### 14. Subscription Manager
@@ -158,7 +166,8 @@ Brings traditional finance (TradFi) data on-chain. This contract fetches stock c
 **Description:**
 A utility contract allowing other DApps to subscribe to specific Sentinel Oracle feeds. It manages expiration logic and state updates, designed to operate in tandem with the API Gateway to restrict unauthorized data access.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0x072D7CEee007883f51bD7Ea391d69F8AA4Bd7Cd5`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0x072D7CEee007883f51bD7Ea391d69F8AA4Bd7Cd5)
 - **Source Code:** [subscription_manager.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/subscription_manager.py)
 
 #### 15. Weather Oracle
@@ -167,5 +176,6 @@ A utility contract allowing other DApps to subscribe to specific Sentinel Oracle
 **Description:**
 Deployed a Weather Oracle contract using `gl.nondet.exec_prompt` to fetch real-world meteorological data. To guarantee network consensus, it strictly implements `gl.eq_principle.prompt_comparative`, enforcing that all validators agree on the parsed integer temperature value before state updates occur.
 
-- **Contract Address:** `[Your Deployed Address]`
+- **Contract Address:** `0x629Ea0E34640ADc0a42A09D6C8719A77665eE0f1`
+- **Explorer Link:** [View on GenLayer Studio](https://explorer-studio.genlayer.com/address/0x629Ea0E34640ADc0a42A09D6C8719A77665eE0f1)
 - **Source Code:** [weather_oracle.py](https://github.com/Dark-Brain07/GenLayer-Sentinel/blob/main/contracts/weather_oracle.py)
